@@ -4,41 +4,6 @@ namespace simpleSummationLibrary
 {
     public class SimpleSummation
     {
-        /// <summary>
-        /// Сумма двух минимальных элементов
-        /// </summary>
-        /// <returns>Возвращает double</returns>
-        public double SumOfTwoSmallest<T>(T[] mass) where T : IComparable
-        {
-
-            long memoryLimiter = 1024 * 1024 * 1024;
-
-            if (mass == null || mass.Length == 0)
-            {
-                throw new ArgumentException("Ошибка: EmptyOrNull");
-            }
-
-            if (mass.Length < 2)
-            {
-                throw new ArgumentException("Ошибка: LessThanTwo");
-            }
-
-            if (!mass.All(x => x is int || x is double))
-            {
-                throw new ArgumentException("Ошибка: Type");
-            }
-
-            if (!CheckMemory(mass, memoryLimiter))
-            {
-                throw new ArgumentException("Ошибка: Memory");
-            }
-
-
-            Array.Sort(mass);
-
-            return Convert.ToDouble(mass[0]) + Convert.ToDouble(mass[1]);
-
-        }
 
         private static bool CheckMemory<T>(T[] mass, long memoryLimiter)
         {
@@ -61,6 +26,47 @@ namespace simpleSummationLibrary
             long elementSize = Marshal.SizeOf(typeof(T));
 
             return elementSize * size;
+        }
+
+        public static (int, int) FindTwoMin(int[] arr)
+        {
+            long memoryLimiter = 1024 * 1024 * 1024;
+
+            if (arr.Length < 2 || arr == null || arr.Length == 0)
+                return (0, 0);
+
+
+            if (!CheckMemory(arr, memoryLimiter))
+            {
+                throw new ArgumentException("Ошибка: Memory");
+            }
+
+
+            int min1 = int.MaxValue;
+            int min2 = int.MaxValue;
+
+            foreach (int num in arr)
+            {
+                if (num < min1)
+                {
+                    min2 = min1;
+                    min1 = num;
+                }
+                else if (num < min2 && num != min1)
+                {
+                    min2 = num;
+                }
+            }
+
+            return (min1, min2);
+        }
+
+        public int SumTwoMin(int[] arr)
+        {
+    
+            (int min1, int min2) = FindTwoMin(arr);
+
+            return min1+ min2;
         }
 
     }

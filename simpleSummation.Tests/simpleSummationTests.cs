@@ -6,13 +6,24 @@ namespace simpleSummation.Tests
     public class simpleSummationTests
     {
         [Fact]
-        public void Test1()
+        public void Test1Summ()
         {
             var simpleSumm = new SimpleSummation();
 
-            int[] ints = new int[] { 5, 2, 3 };
+            var ints = new int[] { 5, 2, 3 };
 
-            Assert.Equal(5, simpleSumm.SumOfTwoSmallest(ints));
+            Assert.Equal(5, simpleSumm.SumTwoMin(ints));
+
+        }
+
+        [Fact]
+        public void Test2Empty()
+        {
+            var simpleSumm = new SimpleSummation();
+
+            var ints = new int[] { };
+
+            Assert.Equal(0, simpleSumm.SumTwoMin(ints));
 
         }
     }
