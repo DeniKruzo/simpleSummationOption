@@ -52,7 +52,7 @@ namespace simpleSummationLibrary
                     min2 = min1;
                     min1 = num;
                 }
-                else if (num < min2 && num != min1)
+                else if (num < min2)
                 {
                     min2 = num;
                 }

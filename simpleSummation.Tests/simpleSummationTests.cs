@@ -49,5 +49,16 @@ namespace simpleSummation.Tests
             Assert.Equal(-1, simpleSumm.SumTwoMin(ints));
 
         }
+
+        [Fact]
+        public void Test5()
+        {
+            var simpleSumm = new SimpleSummation();
+
+            var ints = new int[] { 5, 5 };
+
+            Assert.Equal(10, simpleSumm.SumTwoMin(ints));
+
+        }
     }
 }
