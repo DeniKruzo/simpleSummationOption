@@ -28,19 +28,19 @@ namespace simpleSummationLibrary
             return elementSize * size;
         }
 
-        public static (int, int) FindTwoMin(int[] arr)
+        private static (int, int) FindTwoMin(int[] arr)
         {
             long memoryLimiter = 1024 * 1024 * 1024;
 
-            if (arr.Length < 2 || arr == null || arr.Length == 0)
+            if (arr == null || arr.Length == 0)
                 return (0, 0);
 
+            if (arr.Length == 1)
+                return (arr[0], 0);
 
             if (!CheckMemory(arr, memoryLimiter))
-            {
                 throw new ArgumentException("Ошибка: Memory");
-            }
-
+            
 
             int min1 = int.MaxValue;
             int min2 = int.MaxValue;
