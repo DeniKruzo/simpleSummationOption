@@ -60,5 +60,16 @@ namespace simpleSummation.Tests
             Assert.Equal(10, simpleSumm.SumTwoMin(ints));
 
         }
+
+        [Fact]
+        public void Test6()
+        {
+            var simpleSumm = new SimpleSummation();
+
+            var ints = new int[] { int.MaxValue, int.MaxValue, int.MaxValue };
+
+            Assert.Equal(777, simpleSumm.SumTwoMin(ints));
+
+        }
     }
 }

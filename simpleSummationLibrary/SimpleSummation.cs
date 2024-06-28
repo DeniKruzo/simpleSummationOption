@@ -58,7 +58,14 @@ namespace simpleSummationLibrary
                 }
             }
 
-            return (min1, min2);
+            if(min1 == int.MaxValue || min2 == int.MaxValue)
+            {
+                return (777, 0); //А по ТЗ что должна возвращать в таком случае?
+            }else
+            {
+                return (min1, min2);
+            }
+            
         }
 
         public int SumTwoMin(int[] arr)

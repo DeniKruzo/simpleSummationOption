@@ -5,12 +5,13 @@ VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "simpleSummationOption", "simpleSummationOption\simpleSummationOption.csproj", "{F66B992B-2692-4B35-8A67-128338D9FF66}"
 	ProjectSection(ProjectDependencies) = postProject
+		{063D9614-5C53-40C0-A2EC-00718996AB08} = {063D9614-5C53-40C0-A2EC-00718996AB08}
 		{8CB31200-778B-4A9B-81D8-9088D02CD14C} = {8CB31200-778B-4A9B-81D8-9088D02CD14C}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simpleSummation.Tests", "simpleSummation.Tests\simpleSummation.Tests.csproj", "{8CB31200-778B-4A9B-81D8-9088D02CD14C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "simpleSummation.Tests", "simpleSummation.Tests\simpleSummation.Tests.csproj", "{8CB31200-778B-4A9B-81D8-9088D02CD14C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simpleSummationLibrary", "simpleSummationLibrary\simpleSummationLibrary.csproj", "{063D9614-5C53-40C0-A2EC-00718996AB08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "simpleSummationLibrary", "simpleSummationLibrary\simpleSummationLibrary.csproj", "{063D9614-5C53-40C0-A2EC-00718996AB08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
